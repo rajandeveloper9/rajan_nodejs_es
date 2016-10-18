@@ -4,18 +4,19 @@ var _ = require('lodash');
 
 var redis = require('./../lib/redis.js');
 
+var serverLoad = require("./../../valutrend_test/dist/server-load.js");
 // var serverLoad = require("./dist/server-load.js");
-// var server = serverLoad.ServerLoad.bootstrap("error");
+ var server = serverLoad.ServerLoad.bootstrap("error");
 
-var CACHING_ENABLED = true;
-
+var CACHING_ENABLED = true;//false;
+/*
 var server = {
 	searchData: function(query, cb){
 
 		//process.nextTick(cb(null, { 'name' : 'trial'}));
 		setTimeout(cb, 3000, null, {'name' : 'trial'});
 	}
-};
+};*/
 
 function getESQuery(search) {
 
